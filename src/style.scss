@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+body {
+  //   @include size(100%, 100vh);
+  background-color: rgb(237, 242, 248);
+  font-family: Arial, Helvetica, sans-serif;
+
+  .section {
+    @include size(900px, 330px);
+    background-color: white;
+    display: flex;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: calc((100vh - 330px) / 2);
+    &__img {
+      @include size(40%, auto);
+
+      img {
+        @include size(100%, 100%);
+        object-fit: cover;
+        border-radius: 20px 0px 0px 20px;
+      }
+    }
+
+    &__content {
+      @include size(60%, auto);
+      padding: 30px;
+
+      &__details {
+        line-height: 1.4;
+        text-align: justify;
+
+        .details__main {
+          font-size: 1.7em;
+          font-weight: bold;
+          color: rgb(89, 87, 87);
+        }
+
+        .details__sup {
+          font-size: 1em;
+          color: rgb(122, 121, 121);
+          padding: 10px 0px;
+          line-height: 1.7;
+        }
+      }
+
+      &__info {
+        padding-top: 15px;
+        display: flex;
+        .info__avatar {
+          width: 15%;
+
+          img {
+            @include size(70%, auto);
+            border-radius: 50%;
+          }
+        }
+
+        .info__nameUser {
+          width: 75%;
+          //   padding: 0px 20px;
+          line-height: 1.7;
+
+          .name {
+            color: rgb(89, 87, 87);
+            font-weight: bold;
+          }
+
+          .time {
+            color: rgb(122, 121, 121);
+          }
+        }
+
+        .info__share {
+          @include size(10%, 48px);
+          background-color: rgb(237, 242, 248);
+          line-height: 52px;
+          text-align: center;
+          border-radius: 50%;
+          margin-top: 2px;
+          position: relative;
+
+          &:hover {
+            background-color: rgba(73, 85, 107, 0.5);
+          }
+
+          img {
+            width: 20px;
+          }
+
+          &__modal {
+            @include size(200px, 50px);
+            border-radius: 15px;
+            background-color: rgb(73, 85, 107);
+            line-height: 52px;
+            position: absolute;
+            top: -65px;
+            left: -75px;
+            display: flex;
+            justify-content: space-around;
+            padding: 0px 10px;
+            display: none;
+
+            p {
+              color: white;
+              letter-spacing: 4px;
+              font-size: 0.7em;
+            }
+
+            a {
+              padding-top: 3.5px;
+            }
+          }
+
+          .fa-sharp {
+            position: absolute;
+            color: rgb(73, 85, 107);
+            font-size: 2.5em;
+            top: -70%;
+            left: 25%;
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    .section {
+      @include size(700px, auto);
+
+      &__content {
+        &__details {
+          .details__main {
+            font-size: 1.4em;
+          }
+
+          .details__sup {
+            font-size: 0.9em;
+          }
+        }
+
+        .info__nameUser {
+          line-height: 1.5;
+          font-size: 0.9em;
+        }
+
+        &__info {
+          .info__share {
+            @include size(36px, 36px);
+            line-height: 39px;
+
+            img {
+              width: 17px;
+            }
+
+            &__modal {
+              top: -65px;
+              left: -78px;
+            }
+
+            .fa-sharp {
+              top: -95%;
+              left: 15%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  body {
+    .section {
+      @include size(550px, auto);
+      &__content {
+        &__info {
+          .info__avatar {
+            width: 20%;
+
+            img {
+              @include size(75%, auto);
+            }
+          }
+
+          .info__nameUser {
+            width: 70%;
+          }
+          .info__share {
+            @include size(36px, 36px);
+            line-height: 39px;
+
+            img {
+              width: 17px;
+            }
+
+            &__modal {
+              @include size(150px, 40px);
+              top: -55px;
+              left: -60px;
+              line-height: 40px;
+
+              p {
+                font-size: 0.6em;
+              }
+
+              img {
+                width: 15px;
+                padding-bottom: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    .section {
+      @include size(400px, auto);
+      display: block;
+      margin: auto;
+      margin-top: calc((100vh - 623px) / 2);
+      // background-color: red;
+      &__img {
+        @include size(100%, 250px);
+
+        img {
+          @include size(100%, 100%);
+          border-radius: 20px 20px 0px 0px;
+        }
+      }
+
+      &__content {
+        @include size(100%, auto);
+
+        &__info {
+          position: relative;
+
+          .info__avatar {
+            width: 15%;
+          }
+
+          .info__share {
+            // position: absolute;
+
+            &__img {
+              position: absolute;
+              top: 10px;
+              left: 10px;
+              z-index: 3;
+            }
+
+            &__modal {
+              @include size(400px, 100px);
+              border-radius: 0px 0px 15px 15px;
+              line-height: 100px;
+              position: absolute;
+              top: -28px;
+              left: -319px;
+              display: flex;
+              padding-right: 120px;
+              z-index: 2;
+              display: none;
+
+              p {
+                letter-spacing: 5px;
+                font-size: 1em;
+              }
+
+              a {
+                padding-top: 6px;
+                img {
+                  @include size(25px, 25px);
+                }
+              }
+            }
+
+            .fa-sharp {
+              top: 30px;
+              // position: absolute;
+              // z-index: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

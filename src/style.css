@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(237, 242, 248);
+  font-family: Arial, Helvetica, sans-serif;
+}
+body .section {
+  width: 900px;
+  height: 330px;
+  background-color: white;
+  display: flex;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: calc((100vh - 330px) / 2);
+}
+body .section__img {
+  width: 40%;
+  height: auto;
+}
+body .section__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px 0px 0px 20px;
+}
+body .section__content {
+  width: 60%;
+  height: auto;
+  padding: 30px;
+}
+body .section__content__details {
+  line-height: 1.4;
+  text-align: justify;
+}
+body .section__content__details .details__main {
+  font-size: 1.7em;
+  font-weight: bold;
+  color: rgb(89, 87, 87);
+}
+body .section__content__details .details__sup {
+  font-size: 1em;
+  color: rgb(122, 121, 121);
+  padding: 10px 0px;
+  line-height: 1.7;
+}
+body .section__content__info {
+  padding-top: 15px;
+  display: flex;
+}
+body .section__content__info .info__avatar {
+  width: 15%;
+}
+body .section__content__info .info__avatar img {
+  width: 70%;
+  height: auto;
+  border-radius: 50%;
+}
+body .section__content__info .info__nameUser {
+  width: 75%;
+  line-height: 1.7;
+}
+body .section__content__info .info__nameUser .name {
+  color: rgb(89, 87, 87);
+  font-weight: bold;
+}
+body .section__content__info .info__nameUser .time {
+  color: rgb(122, 121, 121);
+}
+body .section__content__info .info__share {
+  width: 10%;
+  height: 48px;
+  background-color: rgb(237, 242, 248);
+  line-height: 52px;
+  text-align: center;
+  border-radius: 50%;
+  margin-top: 2px;
+  position: relative;
+}
+body .section__content__info .info__share:hover {
+  background-color: rgba(73, 85, 107, 0.5);
+}
+body .section__content__info .info__share img {
+  width: 20px;
+}
+body .section__content__info .info__share__modal {
+  width: 200px;
+  height: 50px;
+  border-radius: 15px;
+  background-color: rgb(73, 85, 107);
+  line-height: 52px;
+  position: absolute;
+  top: -65px;
+  left: -75px;
+  display: flex;
+  justify-content: space-around;
+  padding: 0px 10px;
+  display: none;
+}
+body .section__content__info .info__share__modal p {
+  color: white;
+  letter-spacing: 4px;
+  font-size: 0.7em;
+}
+body .section__content__info .info__share__modal a {
+  padding-top: 3.5px;
+}
+body .section__content__info .info__share .fa-sharp {
+  position: absolute;
+  color: rgb(73, 85, 107);
+  font-size: 2.5em;
+  top: -70%;
+  left: 25%;
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  body .section {
+    width: 700px;
+    height: auto;
+  }
+  body .section__content__details .details__main {
+    font-size: 1.4em;
+  }
+  body .section__content__details .details__sup {
+    font-size: 0.9em;
+  }
+  body .section__content .info__nameUser {
+    line-height: 1.5;
+    font-size: 0.9em;
+  }
+  body .section__content__info .info__share {
+    width: 36px;
+    height: 36px;
+    line-height: 39px;
+  }
+  body .section__content__info .info__share img {
+    width: 17px;
+  }
+  body .section__content__info .info__share__modal {
+    top: -65px;
+    left: -78px;
+  }
+  body .section__content__info .info__share .fa-sharp {
+    top: -95%;
+    left: 15%;
+  }
+}
+@media screen and (max-width: 850px) {
+  body .section {
+    width: 550px;
+    height: auto;
+  }
+  body .section__content__info .info__avatar {
+    width: 20%;
+  }
+  body .section__content__info .info__avatar img {
+    width: 75%;
+    height: auto;
+  }
+  body .section__content__info .info__nameUser {
+    width: 70%;
+  }
+  body .section__content__info .info__share {
+    width: 36px;
+    height: 36px;
+    line-height: 39px;
+  }
+  body .section__content__info .info__share img {
+    width: 17px;
+  }
+  body .section__content__info .info__share__modal {
+    width: 150px;
+    height: 40px;
+    top: -55px;
+    left: -60px;
+    line-height: 40px;
+  }
+  body .section__content__info .info__share__modal p {
+    font-size: 0.6em;
+  }
+  body .section__content__info .info__share__modal img {
+    width: 15px;
+    padding-bottom: 2px;
+  }
+}
+@media screen and (max-width: 600px) {
+  body .section {
+    width: 400px;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-top: calc((100vh - 623px) / 2);
+  }
+  body .section__img {
+    width: 100%;
+    height: 250px;
+  }
+  body .section__img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 0px 0px;
+  }
+  body .section__content {
+    width: 100%;
+    height: auto;
+  }
+  body .section__content__info {
+    position: relative;
+  }
+  body .section__content__info .info__avatar {
+    width: 15%;
+  }
+  body .section__content__info .info__share__img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 3;
+  }
+  body .section__content__info .info__share__modal {
+    width: 400px;
+    height: 100px;
+    border-radius: 0px 0px 15px 15px;
+    line-height: 100px;
+    position: absolute;
+    top: -28px;
+    left: -319px;
+    display: flex;
+    padding-right: 120px;
+    z-index: 2;
+    display: none;
+  }
+  body .section__content__info .info__share__modal p {
+    letter-spacing: 5px;
+    font-size: 1em;
+  }
+  body .section__content__info .info__share__modal a {
+    padding-top: 6px;
+  }
+  body .section__content__info .info__share__modal a img {
+    width: 25px;
+    height: 25px;
+  }
+  body .section__content__info .info__share .fa-sharp {
+    top: 30px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
